@@ -1,0 +1,130 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Big Cartel Front-End Dev Test</title>
+
+  <link rel="icon" href="//d3m7eij7f8iwln.cloudfront.net/misc/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" type="text/css" href="lib/jasmine-2.0.0/jasmine.css">
+  <link rel="stylesheet" type="text/css" href="stylesheets/bootstrap.css">
+
+  <script type="text/javascript" src="lib/jasmine-2.0.0/jasmine.js"></script>
+  <script type="text/javascript" src="lib/jasmine-2.0.0/jasmine-html.js"></script>
+  <script type="text/javascript" src="lib/jasmine-2.0.0/boot.js"></script>
+
+  <!-- Source Files .. -->
+  <script type="text/javascript" src="answers.js"></script>
+
+  <!-- include spec files here... -->
+  <script type="text/javascript" src="spec/SpecHelper.js"></script>
+  <script type="text/javascript" src="spec/TestSpec.js"></script>
+
+</head>
+
+<body>
+  <div class="container">
+    <section>
+      <div class="page-header">
+        <h1>Big Cartel Front-End Dev Candidate Test</h1>
+      </div>
+      <p class="lead">
+
+      </p>
+    </section>
+
+    <section>
+      <div class="page-header">
+        <h2>1. Write a JavaScript method to serialize the following form.</h2>
+      </div>
+      <p>
+        It should take a CSS selector as it's only argument and return an object whose structure matches
+        { fieldname: 'fieldvalue' }. Disabled and blank fields should be ignored. Unmatched selectors should return an
+        empty object. As this should be a simple method, no need to worry about nested forms or input arrays.
+      </p>
+
+      <div class="highlight">
+        <form id="serialize_me" name="serialize_me" class="serialize_me">
+          <div class="form-group">
+            <label>Text field</label>
+            <input class="form-control" type="text" name="input_one" value="value one">
+          </div>
+          <div class="form-group">
+            <label>Text field without a value</label>
+            <input class="form-control" type="text" name="input_two" value="">
+          </div>
+          <div class="form-group">
+            <label>Disabled text field without a value</label>
+            <input class="form-control" type="text" name="input_three" value="value three" disabled>
+          </div>
+          <div class="form-group">
+            <label>Textarea</label>
+            <textarea  class="form-control"name="input_four">value four</textarea>
+          </div>
+          <div class="form-group">
+            <label>Checkboxes</label>
+            <p class="checkbox">
+              <label><input type="checkbox" name="input_five" value="value five" checked> Checked checkbox</label>
+            </p>
+            <p class="checkbox">
+              <label><input type="checkbox" name="input_six" value="value six"> Checkbox</label>
+            </p>
+          </div>
+          <div class="form-group">
+            <label>Radios</label>
+            <p class="radio">
+              <label><input type="radio" name="input_seven" value="value seven alt 1"> Radio</label>
+            </p>
+            <p class="radio">
+              <label><input type="radio" name="input_seven" value="value seven" checked> Selected Radio</label>
+            </p>
+            <p class="radio">
+              <label><input type="radio" name="input_seven" value="value seven alt 2"> Radio</label>
+            </p>
+          </div>
+          <div class="form-group">
+            <label>Selects</label>
+            <p class="form-group">
+              <select name="input_eight">
+                <option value='' selected>Choose one</option>
+                <option value="option 1">Option 1</option>
+                <option value="option 2">Option 2</option>
+              </select>
+            </p>
+            <p class="form-group">
+              <select name="input_nine">
+                <option>Choose one</option>
+                <option value="option 1" selected>Option 1</option>
+                <option value="option 2">Option 2</option>
+              </select>
+            </p>
+          </div>
+        </form>
+      </div>
+    </section>
+      <div class="page-header">
+        <h2>2. Flatten the object</h2>
+      </div>
+      <p>
+        Write a function that flattens a nested object into URLs, so that:
+      </p>
+<pre>
+{
+  'index': {
+    'about': {
+      'team': true,
+      'company': ['Jim', 'Barry']
+    }
+  }
+}</pre>
+        <p>
+          Is tranformed into:
+        </p>
+<pre>
+{
+  'index/about/team': true,
+  'index/about/company': ['Jim', 'Barry']
+}</pre>
+      </section>
+  </div>
+</body>
+</html>
