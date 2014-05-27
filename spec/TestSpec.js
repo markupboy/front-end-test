@@ -1,6 +1,6 @@
 describe("Big Cartel Front-End Dev Test", function() {
 
-  xit("serializes a form into JSON", function() {
+  it("serializes a form into JSON", function() {
     expectedOutput = {
       'input_one': 'value one',
       'input_four': 'value four',
